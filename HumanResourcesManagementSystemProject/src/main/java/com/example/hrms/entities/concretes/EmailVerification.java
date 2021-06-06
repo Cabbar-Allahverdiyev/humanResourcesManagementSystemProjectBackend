@@ -1,0 +1,41 @@
+package com.example.hrms.entities.concretes;
+
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import com.example.hrms.entities.abstracts.IEntity;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name="verification_codes")
+public class EmailVerification implements IEntity{
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="id")
+	private int id;
+	
+	@Column(name="code")
+	private String code;
+	
+	@Column(name="is_verified")
+	private boolean isVerified;
+	
+	@Column(name="user_id")  //duzelis et
+	private int userId;
+	
+	public boolean isVerified() {
+		return this.isVerified;
+	}
+}
+
