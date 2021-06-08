@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class JobPostingGetDto {
 	private String employerCompanyName;
-	private String jobName;
+	private String jobJobName;
 	private int openPositionNumber;
 	private LocalDate createdDate;
 	private LocalDate closedDate;
