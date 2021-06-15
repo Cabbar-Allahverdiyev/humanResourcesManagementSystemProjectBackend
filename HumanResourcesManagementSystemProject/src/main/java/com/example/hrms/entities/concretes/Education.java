@@ -37,7 +37,7 @@ public class Education {	//IEntity
 	
 	//@JsonProperty(access = Access.WRITE_ONLY)
 	@ManyToOne(targetEntity = Graduate.class)
-	@JoinColumn(name = "graduate_id")
+	@JoinColumn(name = "graduate_id",referencedColumnName = "id",nullable = false)
 	private Graduate graduate;
 	
 	@Column(name="school_name")

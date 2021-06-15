@@ -28,8 +28,8 @@ public class ResumeGetDto {
 	private String description;
 	private LocalDate createdDate;
 	private LocalDate updatedDate;
-//	private List<JobExperience> jobExperiences;
-//	private List<Language> languages;
-//	private List<Technology> technologies;
-//	private List<Education> education;
+	private List<JobExperience> jobExperiences;
+	private List<Language> languages;
+	private List<Technology> technologies;
+	private List<Education> education;
 }

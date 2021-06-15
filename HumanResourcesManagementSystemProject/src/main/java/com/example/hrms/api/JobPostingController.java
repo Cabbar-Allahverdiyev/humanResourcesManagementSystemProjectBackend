@@ -17,7 +17,7 @@ import com.example.hrms.entities.concretes.JobPosting;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/api/jobPosting")
+@RequestMapping("/api/jobposting")
 public class JobPostingController {
 	private JobPostingService jobPostingService;
 	
@@ -27,7 +27,7 @@ public class JobPostingController {
 		this.jobPostingService = jobPostingService;
 	}
 	
-	@GetMapping("/getAll")
+	@GetMapping("/getall")
 	DataResult<List<JobPosting>> getAll(){
 		return this.jobPostingService.getAll();
 	}

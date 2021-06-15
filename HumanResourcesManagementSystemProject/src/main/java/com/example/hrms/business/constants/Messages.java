@@ -25,7 +25,7 @@ public  class Messages {
 
 	public static String emailInvalid="e-mail, e-mail formatında olmalıdır məs:cabbar@cabbar.com";
 
-	public static String webDomainEqulasEmail="web adresin domeni email adresin ad bolməsi ilə eyni olmalıdır";
+	public static String webDomainNotEqulasEmail="web adresin domeni email adresin ad bolməsi ilə eyni olmalıdır";
 
 	public static String jobCategoryAdded="İş kategoriyası əlavə edildi";
 
@@ -77,4 +77,25 @@ public  class Messages {
 
 	public static String saveImage="Təsvir əlavə edildi";
 	
+	public static String employersListedByCompanyName="İşəgötürənlər şirkət adına  sıralandı ";
+
+	public static String employersHaveCompanyNameInThisName="işəgötürənlərin içərisində bu adda şirkət adı var";
+
+	public static String employersHaveNotCompanyNameInThisName="işəgötürənlərin içərisində bu adda şirkət adı yoxdur";
+
+	public static String previouslyApprovedCompany="Bu Şirkət Daha əvvəl təsdiq edilmişdir ";
+
+	public static String employerUpdate="işəgötürən yeniləndi";
+
+	public static String verificationSuccessful="Doğrulama uğurlu oldu";
+
+	public static String incorrectVerificationProcess="Səhv təsdiqləmə ";
+
+	public static String userAdded="istifadəci əlavə edildi";
+	
+	public static String userUpdated="istifadəci məlumatları yeniləndi ";
+
+	public static String invalidUserUpdate="Belə bir istifadəçi yoxdur";
+
+	public static String employerNotFound="istifadəçi tapılmadı";
 }

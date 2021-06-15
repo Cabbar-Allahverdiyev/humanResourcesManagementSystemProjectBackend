@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.hrms.business.abstracts.JobSeekerService;
+import com.example.hrms.business.abstracts.UserService;
+import com.example.hrms.business.abstracts.VerifyCodeService;
 import com.example.hrms.business.constants.Messages;
 import com.example.hrms.core.utilities.business.BusinessRules;
 import com.example.hrms.core.utilities.results.DataResult;
@@ -23,11 +25,18 @@ import com.example.hrms.business.rules.BusinessRulesMethods;
 public class JobSeekerManager implements JobSeekerService{ 
 	
 	private JobSeekerDao jobSeekerDao;
+	private UserService userService;
+	private VerifyCodeService verifyCodeService;
 	
 	@Autowired
-	public JobSeekerManager(JobSeekerDao jobSeekerDao) {
+	public JobSeekerManager(JobSeekerDao jobSeekerDao,
+							UserService userService,
+							VerifyCodeService verifyCodeService
+							) {
 		super();
 		this.jobSeekerDao = jobSeekerDao;
+		this.userService=userService;
+		this.verifyCodeService=verifyCodeService;
 	}
 
 	@Override
@@ -49,6 +58,8 @@ public class JobSeekerManager implements JobSeekerService{
 		}
 		
 		this.jobSeekerDao.save(jobSeeker);
+		this.verifyCodeService.createVerifyCode(this.userService.getOne(jobSeeker.getId()).getData());
+		this.verifyCodeService.sendEmail(jobSeeker.getEmail());
 		return new SuccessResult(Messages.jobSeekerAdded);
 		
 	}

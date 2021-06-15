@@ -31,12 +31,13 @@ public class BusinessRulesMethods {
 	}
 	
 	 
-	public static Result emailWithTheDomainCorrect(String email,String webAdres) {
+	public static Result emailWithTheDomainCorrect(String email,String website) {
 		
-		 if(!email.contains(webAdres)) {
-		    	return new  ErrorResult(Messages.webDomainEqulasEmail); 
-		     }
-		 return new SuccessResult();
+		String[] splitEmail=email.split("@");
+		if (!splitEmail[1].equals(website)) {
+			return new ErrorResult(Messages.webDomainNotEqulasEmail);
+		}
+		return new SuccessResult();
 	}
 	
 //	public static Result isEmailNowAvailable(List<IEntity> result) {

@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -28,16 +29,16 @@ public class JobPosting implements IEntity{
 	@Column(name = "id")
 	private int id;
 	
-	@ManyToOne()
-	@JoinColumn(name = "job_id")
+	@ManyToOne(targetEntity = Job.class,fetch = FetchType.LAZY,optional = false) //fetch-e nezaret et
+	@JoinColumn(name = "job_id",referencedColumnName = "id",nullable = false)
 	private Job job;
 	
-	@ManyToOne()
-	@JoinColumn(name = "city_id")
+	@ManyToOne(targetEntity =City.class,fetch = FetchType.LAZY,optional = false)  //fetch-e nezaret et
+	@JoinColumn(name = "city_id",referencedColumnName = "id",nullable = false)
 	private City city;
 	
-	@ManyToOne
-	@JoinColumn(name="employer_id")
+	@ManyToOne(targetEntity = Employer.class,fetch = FetchType.LAZY,optional = false)//fetch-e nezaret et
+	@JoinColumn(name="employer_id",referencedColumnName = "id",nullable = false)
 	private Employer employer;
 	
 	@Column(name = "min_salary")
@@ -59,7 +60,7 @@ public class JobPosting implements IEntity{
 	private String jobDescription;
 	
 	@Column(name="is_active",nullable = false)
-	private boolean isActive;
+	private boolean isActive=true;
 	
 	
 

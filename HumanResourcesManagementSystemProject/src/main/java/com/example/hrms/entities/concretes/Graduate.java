@@ -35,6 +35,6 @@ public class Graduate implements IEntity {
 	@Column(name="description")
 	private String description;
 	
-	@OneToMany(mappedBy = "graduate")
-	private List<Education> educations;
+//	@OneToMany(mappedBy = "graduate")
+//	private List<Education> educations;
 }

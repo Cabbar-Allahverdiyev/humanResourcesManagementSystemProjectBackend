@@ -9,4 +9,8 @@ import com.example.hrms.entities.concretes.Employer;
 public interface EmployerService {
 	DataResult<List<Employer>> getAll();
 	Result add(Employer employer);
+	DataResult<List<Employer>> getAllByCompanyName(String companyName);
+	DataResult<Employer> getByCompanyName(String companyName);
+	Result isUserConfirm(String companName);
+	Result update (Employer employer,int id);
 }
